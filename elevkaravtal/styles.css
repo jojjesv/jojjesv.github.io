@@ -3,8 +3,17 @@ body {
 }
 
 main {
-  margin: 80px 20% 48px 20%;
+  padding: 24px;
+  box-sizing: border-box;
+  margin: 80px auto 48px auto;
+  width: 60vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    width: 100%;
+  }
 }
 
 h1,
