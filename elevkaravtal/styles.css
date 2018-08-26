@@ -1,0 +1,22 @@
+body {
+  background: #fafafa;
+}
+
+main {
+  margin: 80px 20% 48px 20%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 36px;
+  font-weight: 300;
+  color: #616161;
+}
+
+p,
+li {
+  line-height: 175%;
+  color: #424242;
+}
