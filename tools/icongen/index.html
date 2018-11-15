@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>iOS Icon Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <main class="container section">
+    <h1 class="title">iOS Icon Generator</h1>
+    <div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label" for="input-gradient-top">Top gradient</label>
+        </div>
+        <div class="field-body">
+          <input class="input" id="input-gradient-top" type="text" placeholder="Top gradient" />
+        </div>
+      </div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label" for="input-gradient-bottom">Bottom gradient</label>
+        </div>
+        <div class="field-body">
+          <input class="input" id="input-gradient-bottom" type="text" placeholder="Bottom gradient" />
+        </div>
+      </div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label" for="input-image">Foreground image</label>
+        </div>
+        <div class="field-body">
+          <input class="input" id="input-image" type="file" />
+        </div>
+      </div>
+      <div class="is-right">
+        <a class="button" id="save-img" download="iTunesArtwork@2x.png">Save</a>
+      </div>
+    </div>
+
+    <canvas id="result" width="1024" height="1024">
+    </canvas>
+  </main>
+</body>
+
+</html>
