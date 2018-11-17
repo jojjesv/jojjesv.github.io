@@ -1,0 +1,9 @@
+#result {
+  background: #dadada;
+}
+
+@media (max-width: 1024px) {
+  #result {
+    width: 100%;
+  }
+}
