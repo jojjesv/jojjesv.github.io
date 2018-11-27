@@ -6,7 +6,7 @@ let image;
 let imageMaxWidth = 860;
 let imageMaxHeight = imageMaxWidth;
 
-function updateCanvas(gradientTop, gradientBottom, image) {
+function updateCanvas(gradientTop, gradientBottom, image, insetPercent = 100) {
   /**
    * @type {HTMLCanvasElement}
    */
@@ -37,12 +37,20 @@ function updateCanvas(gradientTop, gradientBottom, image) {
     let imgHeight = image.height;
     let imgRatio = imgWidth / imgHeight;
 
-    if (imgHeight > imgWidth && imgHeight > imageMaxHeight) {
-      imgHeight = imageMaxHeight;
-      imgWidth = imageMaxHeight * imgRatio;
+    let insetF = parseInt(insetPercent);
+    if (isNaN(insetF)) {
+      insetF = 100;
+    }
+    insetF /= 100;
+    let imageMaxWidthF = canvas.width - (canvas.width - imageMaxWidth) * insetF;
+    let imageMaxHeightF = canvas.height - (canvas.height - imageMaxHeight) * insetF;
+
+    if (imgHeight > imgWidth && imgHeight > imageMaxHeightF) {
+      imgHeight = imageMaxHeightF;
+      imgWidth = imageMaxHeightF * imgRatio;
     } else {
-      imgWidth = imageMaxWidth;
-      imgHeight = imageMaxWidth / imgRatio;
+      imgWidth = imageMaxWidthF;
+      imgHeight = imageMaxWidthF / imgRatio;
     }
     context.drawImage(
       image,
@@ -58,10 +66,11 @@ function updateCanvas(gradientTop, gradientBottom, image) {
 function onInputChanged() {
   let gradientTop = document.getElementById('input-gradient-top').value;
   let gradientBottom = document.getElementById('input-gradient-bottom').value;
+  let insetPercent = parseInt(document.getElementById('input-inset').value);
 
   //  Wait for image layout
   setTimeout(() => {
-    updateCanvas(gradientTop, gradientBottom, image);
+    updateCanvas(gradientTop, gradientBottom, image, insetPercent);
   }, 150)
 }
 
@@ -84,6 +93,7 @@ function registerListeners() {
 
   document.getElementById('input-gradient-top').onchange = onInputChanged;
   document.getElementById('input-gradient-bottom').onchange = onInputChanged;
+  document.getElementById('input-inset').onchange = onInputChanged;
 }
 
 window.onload = function () {
