@@ -1,0 +1,31 @@
+body {
+  background: #fafafa;
+}
+
+main {
+  padding: 24px;
+  box-sizing: border-box;
+  margin: 80px auto 48px auto;
+  width: 60vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    width: 100%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 36px;
+  font-weight: 300;
+  color: #616161;
+}
+
+p,
+li {
+  line-height: 175%;
+  color: #424242;
+}
